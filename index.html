@@ -3,15 +3,22 @@
 <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
 <title>Tumble log xyz</title>
 <style> li img {max-width:500px; display:block;}
-body {font-family: "Hoefler Text", Georgia, serif; background-color: white; line-height: 1.2em; }
+body {font-family: "Hoefler Text", Georgia, serif; background-color: white; line-height: 1.2em; 
+    display:webkit-flex; display:flex; webkit-flex-wrap:wrap; flex-wrap:wrap;}}
 h1 {font-size: 2em; line-height: 1.2em;}
 h3 {margin-bottom:0.25em; font-weight:300;}
 h3 a {font-weight:600; text-decoration:none;}
 p {margin-top:0.25em;}
 .h-card, .webmention-author { font-family: "Gill Sans", Roboto,Verdana, sans-serif; }
 .h-entry { line-height: 1.2em; clear:both;}
+.h-entry h1 { max-width: 40rem;}
+.h-entry h2 { max-width: 40rem;}
+.h-entry p { max-width: 40rem;}
+.h-entry blockquote { max-width: 36rem;}
+.featured {max-width: 40rem;}
 
 .webmention-container,.webmention-summary,footer {max-width: 25em; }
 h1,h2,h3,.webmention-name { font-family: "Gill Sans", Roboto,Verdana, sans-serif; }
@@ -60,8 +67,8 @@ h1,h2,h3,.webmention-name { font-family: "Gill Sans", Roboto,Verdana, sans-serif
 </style>
 </head>
 <body>
-<h1>Tumble log like it’s 2005</h1>
-<p>A domain to delegate your tumblr to so it is no longer under tumblr.com.
+<main class="h-entry"><h1 class="p-name">Tumble log like it’s 2005</h1>
+<div class="e-content"><p>A domain to delegate your tumblr to so it is no longer under tumblr.com.
 <p>This stops the Oath interstital showing up, and I am told it also measn that your flagged content is still available.
     I haven't verified that - if it works for you, do please tell me.
 <p>Take these steps:
@@ -82,3 +89,15 @@ h1,h2,h3,.webmention-name { font-family: "Gill Sans", Roboto,Verdana, sans-serif
 <p>The name "Tumble log" created by <a href="https://kottke.org/05/10/tumblelogs">Jason Kottke in 2005</a>
 
 Delegating to a domain that you own is a better idea in the long run.
+    </div>
+    </main>
+<aside><script id="webmention-hosted">
+(function () {
+var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
+url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
+url = url && url[0] ? url[0].href : false;
+sn.type = "text/javascript"; sn.async = true;
+sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
+s.parentNode.insertBefore(sn, s);
+}());
+    </script></aside>    
