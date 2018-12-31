@@ -20,50 +20,13 @@ p {margin-top:0.25em;}
 .h-entry blockquote { max-width: 36rem;}
 .featured {max-width: 40rem;}
 
-.webmention-container,.webmention-summary,footer {max-width: 25em; }
-h1,h2,h3,.webmention-name { font-family: "Gill Sans", Roboto,Verdana, sans-serif; }
+#webmentions,footer {max-width: 25em; }
+h1,h2,h3,#webmentions .name,#webmentions .source { font-family: "Gill Sans", Roboto,Verdana, sans-serif; }
 
-.webmention-mention { margin:.5em; background-color: linen;}
-.webmention-facepile > li {
-  display: inline-block;
-  position: relative;
-  margin: 0 5px 5px 0;
-}
-.webmention-interaction-presentation:after {
-  display: block;
-  position: absolute;
-  bottom: -4px;
-  right: -4px;
-  padding: 4px;
-  width: 1em;
-  height: 1em;
+#webmentions li { margin:.5em; background-color: linen;}
+#webmentions .reaction img {height: 3em; float:left; margin:.25em;}
+#webmentions ul {list-style-type: none; padding:0}
 
-  font-size: 1em;
-  line-height: 1;
-  text-align: center;
-
-  color: #000;
-}
-.webmention-interaction-like .webmention-interaction-presentation:after {content: "🌟"; color:gold;}
-.webmention-interaction-repost .webmention-interaction-presentation:after {content: "♻"; color:green;}
-
-.webmention-interaction-presentation > span {
-  display: block;
-  text-indent: -5000em;
-  position: relative;
-  overflow: hidden;
-  width: 3em;
-  height: 3em;
-  background: #eee;
-  border: 1px solid #ccc;
-}
-.webmention-interaction-presentation > span > img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-}
-.webmention-facepile :link,.webmention-facepile :visited { text-decoration:none; }
 </style>
 </head>
 <body>
@@ -91,13 +54,5 @@ h1,h2,h3,.webmention-name { font-family: "Gill Sans", Roboto,Verdana, sans-serif
 Delegating to a domain that you own is a better idea in the long run.
     </div>
     </main>
-<aside><script id="webmention-hosted">
-(function () {
-var sn = document.createElement("script"), s = document.getElementsByTagName("script")[0], url;
-url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
-url = url && url[0] ? url[0].href : false;
-sn.type = "text/javascript"; sn.async = true;
-sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
-s.parentNode.insertBefore(sn, s);
-}());
-    </script></aside>    
+<aside id="webmentions"></aside>    
+<script src="webmention.js"></script>
